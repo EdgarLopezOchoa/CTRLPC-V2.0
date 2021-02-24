@@ -3,37 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_Articulos">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.ctrlpc.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_Articulos"
+        android:name="com.example.ctrlpc.InicioFragment"
+        android:label="Articulos"
+        tools:layout="@layout/fragment_inicio" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_Carrito"
         android:name="com.example.ctrlpc.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="Carrito"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_Cuenta"
         android:name="com.example.ctrlpc.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="Cuenta"
         tools:layout="@layout/fragment_notifications" />
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/navigation_Login"
         android:name="com.example.ctrlpc.LoginFragment"
-        android:label="fragment_login"
+        android:label="Login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/navigation_configuracion"
         android:name="com.example.ctrlpc.ConfiguracionFragment"
-        android:label="fragment_configuracion"
+        android:label="Configuraciones"
         tools:layout="@layout/fragment_configuracion" >
         <action
             android:id="@+id/action_navigation_configuracion_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/navigation_Login" />
     </fragment>
 </navigation>
