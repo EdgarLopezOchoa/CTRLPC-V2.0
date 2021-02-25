@@ -114,10 +114,9 @@
         android:layout_marginBottom="39dp"
         app:layout_constraintBottom_toTopOf="@+id/ETemail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TVlogin"
-        app:layout_constraintVertical_bias="0.727"
+        app:layout_constraintVertical_bias="0.38"
         app:srcCompat="@drawable/logo_blanco"
         tools:src="@drawable/logo_blanco" />
 
