@@ -11,7 +11,7 @@ import android.view.WindowManager;
 
 import static androidx.core.os.HandlerCompat.postDelayed;
 
-public class SplashScreen extends Activity {
+public class SplashScreen extends AppCompatActivity {
 
     private int DURATION_SPLACH = 3000;
     @Override
