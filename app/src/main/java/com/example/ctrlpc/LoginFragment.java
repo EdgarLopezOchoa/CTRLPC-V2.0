@@ -4,9 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +63,68 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        Button iniciar;
+
+        iniciar = view.findViewById(R.id.BNiniciarsesion);
+
+        iniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText correo;
+                TextView asterisco1;
+                TextView asterisco2;
+                EditText password;
+
+                asterisco1 = view.findViewById(R.id.TVasterisco);
+
+                asterisco2 = view.findViewById(R.id.TVasterisco2);
+
+                correo = view.findViewById(R.id.ETemail);
+
+                password = view.findViewById(R.id.ETpassword);
+
+
+                if (correo.getText().toString().isEmpty()){
+                    correo.setHintTextColor(getResources().getColor(R.color.rojo));
+                    asterisco1.setVisibility(View.VISIBLE);
+                    asterisco1.setHintTextColor(getResources().getColor(R.color.rojo));
+
+                }
+                if (password.getText().toString().isEmpty()){
+                   password.setHintTextColor(getResources().getColor(R.color.rojo));
+                    asterisco2.setVisibility(View.VISIBLE);
+                    asterisco2.setHintTextColor(getResources().getColor(R.color.rojo));
+                }
+            }
+        });
+
+
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+
+
+
+        /*Button registro;
+        registro = view.findViewById(R.id.BTNregistro);
+        LoadingDialogo loadingDialogo = new LoadingDialogo(LoginFragment.this);
+        registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadingDialogo.LoadingAlert();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        loadingDialogo.dismissdialogo();
+                    }
+                }, 5000);
+            }
+        });*/
+
+        return view;
     }
 }
