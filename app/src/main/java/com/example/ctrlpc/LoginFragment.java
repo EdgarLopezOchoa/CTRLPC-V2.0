@@ -89,13 +89,13 @@ public class LoginFragment extends Fragment {
                 if (correo.getText().toString().isEmpty()){
                     correo.setHintTextColor(getResources().getColor(R.color.rojo));
                     asterisco1.setVisibility(View.VISIBLE);
-                    asterisco1.setHintTextColor(getResources().getColor(R.color.rojo));
+                    asterisco1.setTextColor(getResources().getColor(R.color.rojo));
 
                 }
                 if (password.getText().toString().isEmpty()){
                    password.setHintTextColor(getResources().getColor(R.color.rojo));
                     asterisco2.setVisibility(View.VISIBLE);
-                    asterisco2.setHintTextColor(getResources().getColor(R.color.rojo));
+                    asterisco2.setTextColor(getResources().getColor(R.color.rojo));
                 }
             }
         });
