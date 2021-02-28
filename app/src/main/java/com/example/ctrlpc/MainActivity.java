@@ -43,35 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        /*botonregistro = findViewById(R.id.BTNregistro);
-        dialog = new Dialog(this);
-
-        botonregistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenDialog();
-            }
-        });*/
     }
-
-    /*public void OpenDialog(){
-        dialog.setContentView(R.layout.cuadro_de_dialogo_registro);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        ImageView IMclose = dialog.findViewById(R.id.IMclose);
-        Button BTNusuario = dialog.findViewById(R.id.BTNusuario);
-        Button BTNempresa = dialog.findViewById(R.id.BTNempresa);
-        dialog.show();
-
-        IMclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-
-            }
-        });
-    }*/
 
 
     public boolean onCreateOptionsMenu(Menu menu){

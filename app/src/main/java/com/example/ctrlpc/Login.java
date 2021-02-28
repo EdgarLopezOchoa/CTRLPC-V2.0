@@ -1,6 +1,7 @@
 package com.example.ctrlpc;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -67,6 +68,18 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
 
     }
 });
+        CancelarLogin = findViewById(R.id.TVcancelarlogin);
+        CancelarLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent intent =  new Intent(getApplicationContext(), ConfiguracionFragment.class);
+                startActivity(intent);*/
+
+                ConfiguracionFragment configuracionFragment = new ConfiguracionFragment();
+                FragmentManager manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.frameLayout3,configuracionFragment).commit();
+            }
+        });
         botonregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,14 +95,8 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         Button BTNusuario = dialog.findViewById(R.id.BTNusuario);
         Button BTNempresa = dialog.findViewById(R.id.BTNempresa);
         dialog.show();
-        CancelarLogin = findViewById(R.id.TVcancelarLogin);
-        CancelarLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =  new Intent(getApplicationContext(), ConfiguracionFragment.class);
-                startActivity(intent);
-            }
-        });
+
+
         IMclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

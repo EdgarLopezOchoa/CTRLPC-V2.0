@@ -5,10 +5,64 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:animationCache="true"
     android:background="@color/white"
     app:barrierMargin="@dimen/activity_vertical_margin"
     tools:context=".Login">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="367dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/degradado"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/TVlogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TVcancelarregistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="275dp"
+        android:layout_marginRight="275dp"
+        android:layout_marginBottom="482dp"
+        android:clickable="true"
+        android:text="CANCELAR"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <TextView
+        android:id="@+id/TVtituloregistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="480dp"
+        android:clickable="true"
+        android:text="CTRL PC"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193" />
 
     <TextView
         android:id="@+id/TVlogin"
@@ -16,7 +70,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="125dp"
         android:layout_marginLeft="125dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
         android:text="USUARIOS"
@@ -73,58 +127,22 @@
         app:layout_constraintVertical_bias="0.141" />
 
     <Button
-        android:id="@+id/BNiniciarsesion"
-        android:layout_width="180dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:text="Iniciar Sesion"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/BTNregistro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ETpassword" />
-
-    <Button
         android:id="@+id/BTNregistro"
         android:layout_width="180dp"
         android:layout_height="49dp"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="112dp"
         android:text="Registrarse"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/BNiniciarsesion" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="119dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginRight="116dp"
-        android:layout_marginBottom="39dp"
-        app:layout_constraintBottom_toTopOf="@+id/ETemail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVlogin"
-        app:layout_constraintVertical_bias="0.38"
-        app:srcCompat="@drawable/usuario"
-        tools:src="@drawable/usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/ETpassword" />
 
     <TextView
         android:id="@+id/TVasterisco"
@@ -162,6 +180,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVyatengocuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="85dp"
+        android:clickable="true"
+        android:linksClickable="false"
+        android:text="Ya tienes una cuenta?"
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BTNregistro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
