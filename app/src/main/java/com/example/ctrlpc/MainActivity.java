@@ -1,9 +1,15 @@
 package com.example.ctrlpc;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,11 +23,14 @@ import androidx.navigation.ui.NavigationUI;
 import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
+    Button botonregistro;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -31,7 +40,40 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
+
+
+        /*botonregistro = findViewById(R.id.BTNregistro);
+        dialog = new Dialog(this);
+
+        botonregistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenDialog();
+            }
+        });*/
     }
+
+    /*public void OpenDialog(){
+        dialog.setContentView(R.layout.cuadro_de_dialogo_registro);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        ImageView IMclose = dialog.findViewById(R.id.IMclose);
+        Button BTNusuario = dialog.findViewById(R.id.BTNusuario);
+        Button BTNempresa = dialog.findViewById(R.id.BTNempresa);
+        dialog.show();
+
+        IMclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+            }
+        });
+    }*/
+
+
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions,menu);

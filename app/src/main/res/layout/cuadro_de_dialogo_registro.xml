@@ -1,6 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/IMclose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="320dp"
+                android:layout_marginLeft="320dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_close"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/TVRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿COMO DESEA REGISTRARSE?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.109" />
+
+            <ImageView
+                android:id="@+id/IVregistro"
+                android:layout_width="178dp"
+                android:layout_height="133dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.386"
+                app:srcCompat="@drawable/usuario" />
+
+            <TextView
+                android:id="@+id/TVseleccioneRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="83dp"
+                android:layout_marginLeft="83dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="69dp"
+                android:layout_marginRight="69dp"
+                android:text="Seleccione su modo de registro."
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.775"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IVregistro"
+                app:layout_constraintVertical_bias="0.017" />
+
+            <Button
+                android:id="@+id/BTNusuario"
+                android:layout_width="165dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="14dp"
+                android:background="@color/Rojo_quemado"
+                android:text="Usuario"
+                app:backgroundTint="@color/Rojo_quemado"
+                app:cornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/BTNempresa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TVseleccioneRegistro"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/BTNempresa"
+                android:layout_width="186dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="14dp"
+                android:background="@color/Rojo_quemado"
+                android:text="Empresa"
+                app:backgroundTint="@color/Rojo_quemado"
+                app:cornerRadius="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/BTNusuario"
+                app:layout_constraintTop_toBottomOf="@+id/TVseleccioneRegistro" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

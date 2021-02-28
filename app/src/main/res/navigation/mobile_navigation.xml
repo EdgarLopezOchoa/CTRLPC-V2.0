@@ -22,18 +22,20 @@
         android:name="com.example.ctrlpc.ui.notifications.NotificationsFragment"
         android:label="Cuenta"
         tools:layout="@layout/fragment_notifications" />
+
     <fragment
-        android:id="@+id/navigation_Login"
-        android:name="com.example.ctrlpc.LoginFragment"
+        android:id="@+id/navigation_LoginActivity"
+        android:name="com.example.ctrlpc.Login"
         android:label="Login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/navigation_configuracion"
         android:name="com.example.ctrlpc.ConfiguracionFragment"
         android:label="Configuraciones"
         tools:layout="@layout/fragment_configuracion" >
+
         <action
-            android:id="@+id/action_navigation_configuracion_to_loginFragment"
-            app:destination="@id/navigation_Login" />
+            android:id="@+id/action_navigation_configuracion_to_navigation_LoginActivity"
+            app:destination="@id/navigation_LoginActivity" />
     </fragment>
 </navigation>
