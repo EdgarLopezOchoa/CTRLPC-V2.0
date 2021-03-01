@@ -9,8 +9,8 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="363dp"
-        android:layout_height="54dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/degradado"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -23,13 +23,13 @@
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
-        android:layout_width="332dp"
-        android:layout_height="32dp"
+        android:layout_width="313dp"
+        android:layout_height="27dp"
         android:layout_marginStart="10dp"
-        app:cornerRadius="20dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="11dp"
         android:background="@color/white"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
