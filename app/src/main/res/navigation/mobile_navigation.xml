@@ -27,7 +27,11 @@
         android:id="@+id/navigation_LoginActivity"
         android:name="com.example.ctrlpc.Login"
         android:label="Login"
-        tools:layout="@layout/activity_login" />
+        tools:layout="@layout/activity_login" >
+        <action
+            android:id="@+id/action_navigation_LoginActivity_to_navigation_configuracion"
+            app:destination="@id/navigation_configuracion" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_configuracion"
         android:name="com.example.ctrlpc.ConfiguracionFragment"

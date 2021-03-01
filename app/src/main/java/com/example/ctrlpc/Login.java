@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static androidx.navigation.Navigation.findNavController;
+
 public class Login extends AppCompatActivity {
 
     Button botonregistro;
@@ -73,11 +75,15 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*Intent intent =  new Intent(getApplicationContext(), ConfiguracionFragment.class);
-                startActivity(intent);*/
+                startActivity(intent);
 
-                ConfiguracionFragment configuracionFragment = new ConfiguracionFragment();
                 FragmentManager manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.frameLayout3,configuracionFragment).commit();
+                manager.beginTransaction().replace(R.id.navigation_configuracion,new ConfiguracionFragment()).commit();
+
+                findNavController(v).navigate(R.id.action_navigation_LoginActivity_to_navigation_configuracion);*/
+
+                finish();
+
             }
         });
         botonregistro.setOnClickListener(new View.OnClickListener() {
