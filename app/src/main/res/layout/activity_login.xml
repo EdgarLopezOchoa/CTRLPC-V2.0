@@ -117,13 +117,12 @@
         android:layout_marginLeft="56dp"
         android:layout_marginEnd="3dp"
         android:layout_marginRight="3dp"
-        android:layout_marginBottom="8dp"
         android:text="*"
         android:textSize="30sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/TVasterisco2"
         app:layout_constraintEnd_toStartOf="@+id/ETemail"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ETemail" />
 
     <TextView
         android:id="@+id/TVasterisco2"
@@ -138,7 +137,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/ETpassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ETemail" />
+        app:layout_constraintTop_toTopOf="@+id/ETpassword" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -158,7 +157,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="275dp"
         android:layout_marginRight="275dp"
         android:clickable="true"

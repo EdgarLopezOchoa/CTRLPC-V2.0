@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 
 import android.app.DownloadManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
@@ -36,13 +37,14 @@ import java.util.Map;
 
 public class RegistroUsuarios extends AppCompatActivity {
 
-    TextView cuenta;
+    TextView cuenta,asterisco1,asterisco2,asterisco3,asterisco4;
     TextView Cancelarregistro;
     CheckBox contraseña;
-    EditText ETcontraseña;
+    EditText ETcontraseña,ETnombre,ETemail,ETdireccion,ETapellidos;
     Button BTNregistrar;
-    EditText ETnombre;
-    EditText ETemail;
+
+     int Verificador;
+
     RequestQueue requestQueue;
 
 
@@ -73,12 +75,24 @@ public class RegistroUsuarios extends AppCompatActivity {
 
 
         ETemail = findViewById(R.id.ETemailregistro);
-        ETnombre = findViewById(R.id.ETnombreregistro);
+        ETnombre = findViewById(R.id.ETnombresregistro);
+        ETdireccion = findViewById(R.id.ETdireccionregistro);
+        ETapellidos = findViewById(R.id.ETapellidosregistro);
         BTNregistrar = findViewById(R.id.BTNregistrarseregistro);
+        asterisco1 = findViewById(R.id.TVasteriscoregistro);
+        asterisco2 = findViewById(R.id.TVasterisco2registro);
+        asterisco3 = findViewById(R.id.TVasterisco3registro);
+        asterisco4 = findViewById(R.id.TVasterisco4registro);
         BTNregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Registrarempleados("https://carlosarmenta.000webhostapp.com/ctrlpc/registrar_usuarios.php");
+
+                verificacion();
+                if (Verificador == 4)
+                {
+                    conexion();
+                }
+
             }
         });
 
@@ -102,11 +116,11 @@ public class RegistroUsuarios extends AppCompatActivity {
 
     }
 
-    public void Registrarempleados(String URL){
+    public void Registrarusuarios(String URL){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "El empleado a sido registrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "El Usuario A Sido Registrado", Toast.LENGTH_SHORT).show();
                 Limpiarformulario();
             }
         }, new Response.ErrorListener() {
@@ -121,9 +135,9 @@ public class RegistroUsuarios extends AppCompatActivity {
                 parametros.put("E-MAIL",ETemail.getText().toString());
                 parametros.put("PASSWORD",ETcontraseña.getText().toString());
                 parametros.put("NOMBRES",ETnombre.getText().toString());
-               /* parametros.put("Apellido2",TVapellido2.getText().toString());
-                parametros.put("Email",TVemail.getText().toString());
-                parametros.put("Password",TVpassword.getText().toString());
+                parametros.put("DIRECCION",ETdireccion.getText().toString());
+                parametros.put("APELLIDOS",ETapellidos.getText().toString());
+                /*parametros.put("Password",TVpassword.getText().toString());
                 parametros.put("Telefono",TVtelefono.getText().toString());
                 parametros.put("Direccion",TVdireccion.getText().toString());*/
                 return parametros;
@@ -138,7 +152,97 @@ public class RegistroUsuarios extends AppCompatActivity {
         ETemail.setText("");
         ETnombre.setText("");
         ETcontraseña.setText("");
+        ETapellidos.setText("");
+        ETdireccion.setText("");
 
     }
+    public void conexion()
+    {
+        if (ETnombre.getText().toString().isEmpty()) {
+
+
+
+        }
+        else{
+
+            if (ETapellidos.getText().toString().isEmpty())
+            {
+
+            }
+            else
+            {
+
+                if (ETemail.getText().toString().isEmpty())
+                {
+
+                }
+                else
+                {
+
+                    if (ETcontraseña.getText().toString().isEmpty())
+                    {
+
+                    }
+                    else
+                    {
+
+                        Registrarusuarios("https://carlosarmenta.000webhostapp.com/ctrlpc/registrar_usuarios.php");
+                    }
+                }
+            }
+        }
+    }
+
+    public void verificacion()
+    {
+        if (ETnombre.getText().toString().isEmpty()) {
+
+            asterisco1.setVisibility(View.VISIBLE);
+            asterisco1.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            asterisco1.setVisibility(View.GONE);
+            Verificador = 1;
+        }
+
+        if (ETapellidos.getText().toString().isEmpty()) {
+
+            asterisco2.setVisibility(View.VISIBLE);
+            asterisco2.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            asterisco2.setVisibility(View.GONE);
+            Verificador = 2;
+        }
+
+        if (ETemail.getText().toString().isEmpty()) {
+
+            asterisco3.setVisibility(View.VISIBLE);
+            asterisco3.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            asterisco3.setVisibility(View.GONE);
+            Verificador = 3;
+        }
+
+        if (ETcontraseña.getText().toString().isEmpty()) {
+
+            asterisco4.setVisibility(View.VISIBLE);
+            asterisco4.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            asterisco4.setVisibility(View.GONE);
+            Verificador = 4;
+        }
+
+        }
 
 }
