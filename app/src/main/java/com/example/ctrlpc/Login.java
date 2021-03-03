@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
     TextView asterisco1;
     TextView asterisco2;
     TextView CancelarLogin;
+    private int DURATION_SPLACH = 3000;
 
 
     @Override
@@ -47,7 +49,7 @@ public class Login extends AppCompatActivity {
 botoninicio.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-
+        Verificarlogin();
         if (email.getText().toString().isEmpty()) {
 
             asterisco1.setVisibility(View.VISIBLE);
@@ -57,16 +59,19 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         }
         else{
             asterisco1.setVisibility(View.GONE);
-        }
-        if (password.getText().toString().isEmpty()) {
+            if (password.getText().toString().isEmpty()) {
 
-            asterisco2.setVisibility(View.VISIBLE);
-            asterisco2.setTextColor(Color.RED);
-            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+                asterisco2.setVisibility(View.VISIBLE);
+                asterisco2.setTextColor(Color.RED);
+                Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+            }
+            else{
+                asterisco2.setVisibility(View.GONE);
+                OpenDialoglogin();
+            }
         }
-        else{
-            asterisco2.setVisibility(View.GONE);
-        }
+
+
 
     }
 });
@@ -74,26 +79,34 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         CancelarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent =  new Intent(getApplicationContext(), ConfiguracionFragment.class);
+
+                /*finish();*/
+
+               Intent intent =  new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 
-                FragmentManager manager = getSupportFragmentManager();
+                /*FragmentManager manager = getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.navigation_configuracion,new ConfiguracionFragment()).commit();
 
                 findNavController(v).navigate(R.id.action_navigation_LoginActivity_to_navigation_configuracion);*/
 
-                finish();
+
 
             }
         });
         botonregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OpenDialog();
+
+                OpenDialogregistro();
+
             }
         });
     }
-    public void OpenDialog(){
+
+
+
+    public void OpenDialogregistro(){
         dialog.setContentView(R.layout.cuadro_de_dialogo_registro);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -119,6 +132,57 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
                 dialog.dismiss();
             }
         });
+    }
+
+    public void OpenDialoglogin(){
+
+        dialog.setContentView(R.layout.dialogo_de_carga);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        dialog.show();
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent =  new Intent(getApplication(),MainActivity.class);
+                startActivity(intent);
+
+            };
+
+        }, DURATION_SPLACH);
+    }
+
+
+    public void Verificarlogin()
+    {
+        if (email.getText().toString().isEmpty()) {
+
+            asterisco1.setVisibility(View.VISIBLE);
+            asterisco1.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+
+        }
+        else{
+            asterisco1.setVisibility(View.GONE);
+        }
+        if (password.getText().toString().isEmpty()) {
+
+            asterisco2.setVisibility(View.VISIBLE);
+            asterisco2.setTextColor(Color.RED);
+            Toast.makeText(getApplicationContext(),"Rellena Los Campos Marcados",Toast.LENGTH_LONG).show();
+        }
+        else{
+            asterisco2.setVisibility(View.GONE);
+        }
+    }
+
+    public void cerrarlogin(View view)
+    {
+        Login login = new Login();
+        login.finish();
+        RegistroUsuarios registroUsuarios = new RegistroUsuarios();
+        registroUsuarios.finish();
     }
 
 }
