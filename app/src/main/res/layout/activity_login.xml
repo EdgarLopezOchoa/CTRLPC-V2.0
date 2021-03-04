@@ -6,10 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/white"
     app:barrierMargin="@dimen/activity_vertical_margin"
     tools:context=".Login">
 
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="108dp"
+        android:background="@drawable/background"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TVlogin"
@@ -17,19 +28,18 @@
         android:layout_height="42dp"
         android:layout_marginStart="125dp"
         android:layout_marginLeft="125dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
-        android:layout_marginBottom="90dp"
         android:text="LOGIN"
         android:textAlignment="center"
         android:textColor="@android:color/secondary_text_light"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ETemail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/TVtitulologin" />
 
     <EditText
         android:id="@+id/ETemail"
@@ -37,20 +47,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
-        android:layout_marginTop="60dp"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
+        android:background="@drawable/edittext"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="4dp"
+        android:elevation="6dp"
         android:ems="10"
         android:hint="E-Mail"
         android:inputType="textEmailAddress"
+        android:paddingStart="8dp"
         android:textColorHighlight="@color/Rojo_quemado"
         android:textColorLink="@color/rojo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.368" />
+        app:layout_constraintTop_toBottomOf="@+id/TVlogin"
+        app:layout_constraintVertical_bias="0.211" />
 
     <EditText
         android:id="@+id/ETpassword"
@@ -58,11 +72,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
+        android:background="@drawable/edittext"
+        android:drawableStart="@drawable/ic_key"
+        android:drawablePadding="4dp"
+        android:elevation="6dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:paddingStart="8dp"
         android:textColorHighlight="@color/Rojo_quemado"
         android:textColorLink="@color/rojo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,11 +96,12 @@
         android:layout_height="49dp"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
+        android:background="@drawable/degradado"
         android:text="Iniciar Sesion"
-        app:backgroundTint="@color/Rojo_quemado"
+        app:backgroundTintMode="screen"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -96,8 +117,9 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
+        android:background="@drawable/degradado"
         android:text="Registrarse"
-        app:backgroundTint="@color/Rojo_quemado"
+        app:backgroundTintMode="screen"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
@@ -134,35 +156,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ETpassword" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/degradado"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/TVcancelarlogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="275dp"
-        android:layout_marginRight="275dp"
+        android:layout_width="141dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="10dp"
         android:clickable="true"
+        android:drawableStart="@drawable/ic_baseline_arrow_back_24"
         android:text="CANCELAR"
         android:textColor="@android:color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/TVtitulologin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
 
     <TextView
         android:id="@+id/TVtitulologin"
@@ -175,16 +184,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
 
     <CheckBox
         android:id="@+id/CBmostrarContraseñalogin"
         android:layout_width="169dp"
         android:layout_height="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="27dp"
         android:text="Mostrar Contraseña"
+        android:textColor="@android:color/secondary_text_light"
         app:layout_constraintStart_toStartOf="@+id/ETpassword"
         app:layout_constraintTop_toBottomOf="@+id/ETpassword" />
 
