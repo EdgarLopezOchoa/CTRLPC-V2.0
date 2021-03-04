@@ -16,6 +16,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import static androidx.navigation.Navigation.findNavController;
 
 public class Login extends AppCompatActivity {
@@ -29,6 +40,7 @@ public class Login extends AppCompatActivity {
     TextView asterisco2;
     TextView CancelarLogin;
     private int DURATION_SPLACH = 3000;
+    RequestQueue requestQueue;
 
 
     @Override
@@ -50,6 +62,9 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         Verificarlogin();
+
+
+
         if (email.getText().toString().isEmpty()) {
 
             asterisco1.setVisibility(View.VISIBLE);
@@ -67,7 +82,7 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
             }
             else{
                 asterisco2.setVisibility(View.GONE);
-                OpenDialoglogin();
+                loginusuarios("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_usuario.php");
             }
         }
 
@@ -147,7 +162,7 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
             public void run() {
                 Intent intent =  new Intent(getApplication(),MainActivity.class);
                 startActivity(intent);
-
+                dialog.dismiss();finish();
             };
 
         }, DURATION_SPLACH);
@@ -165,6 +180,7 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         }
         else{
             asterisco1.setVisibility(View.GONE);
+
         }
         if (password.getText().toString().isEmpty()) {
 
@@ -177,12 +193,51 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         }
     }
 
-    public void cerrarlogin(View view)
-    {
-        Login login = new Login();
-        login.finish();
-        RegistroUsuarios registroUsuarios = new RegistroUsuarios();
-        registroUsuarios.finish();
+
+
+    public void loginusuarios(String URL){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if(!response.isEmpty()){
+
+                  OpenDialoglogin();
+                    Limpiarformulario();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Los Datos Ingresados Son Incorrectos,Favor De Verificar",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "A Ocurrido Un Error, No Se A Podido Iniciar Sesion", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String > getParams() throws AuthFailureError {
+                Map<String, String > parametros= new HashMap<String, String>();
+                parametros.put("EMAIL",email.getText().toString());
+                parametros.put("CONTRASEÑA",password.getText().toString());
+                return parametros;
+            }
+        };
+
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
+
+
+    public void Limpiarformulario() {
+        email.setText("");
+        password.setText("");
+    }
+
+    /*Estos Es Una Prueba Para GIT*/
 
 }
