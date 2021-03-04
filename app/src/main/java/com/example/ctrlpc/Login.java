@@ -9,8 +9,10 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,6 +41,8 @@ public class Login extends AppCompatActivity {
     TextView asterisco1;
     TextView asterisco2;
     TextView CancelarLogin;
+
+    CheckBox MostrarC;
     private int DURATION_SPLACH = 3000;
     RequestQueue requestQueue;
 
@@ -56,7 +60,23 @@ public class Login extends AppCompatActivity {
     password = findViewById(R.id.ETpassword);
     asterisco1 = findViewById(R.id.TVasterisco);
     asterisco2 = findViewById(R.id.TVasterisco2);
+    MostrarC = findViewById(R.id.CBmostrarContraseñalogin);
         dialog = new Dialog(this);
+
+        MostrarC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (MostrarC.isChecked()==true){
+                    password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+
+                }
+                else if (MostrarC.isChecked()== false)
+                {
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                }
+            }
+        });
+
 
 botoninicio.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -238,6 +258,5 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         password.setText("");
     }
 
-/*Prueba De GIT*/
-    /
+
 }

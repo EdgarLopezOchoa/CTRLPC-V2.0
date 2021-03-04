@@ -60,13 +60,11 @@
         android:layout_marginLeft="72dp"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
-        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHighlight="@color/Rojo_quemado"
         android:textColorLink="@color/rojo"
-        app:layout_constraintBottom_toTopOf="@+id/BNiniciarsesion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,17 +76,15 @@
         android:layout_height="49dp"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
         android:text="Iniciar Sesion"
         app:backgroundTint="@color/Rojo_quemado"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/BTNregistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ETpassword" />
+        tools:layout_editor_absoluteY="401dp" />
 
     <Button
         android:id="@+id/BTNregistro"
@@ -96,16 +92,14 @@
         android:layout_height="49dp"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="106dp"
         android:layout_marginRight="106dp"
-        android:layout_marginBottom="60dp"
         android:text="Registrarse"
         app:backgroundTint="@color/Rojo_quemado"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BNiniciarsesion" />
 
@@ -183,6 +177,17 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/CBmostrarContraseñalogin"
+        android:layout_width="169dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Mostrar Contraseña"
+        app:layout_constraintBottom_toTopOf="@+id/BNiniciarsesion"
+        app:layout_constraintStart_toStartOf="@+id/ETpassword"
+        app:layout_constraintTop_toBottomOf="@+id/ETpassword"
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
