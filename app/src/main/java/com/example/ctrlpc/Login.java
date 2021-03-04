@@ -238,6 +238,6 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
         password.setText("");
     }
 
-    /*Estos Es Una Prueba Para GIT*/
-
+/*Prueba De GIT*/
+    /
 }
