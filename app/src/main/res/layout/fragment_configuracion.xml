@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout_configuracion"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ConfiguracionFragment">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="110dp"
         android:clickable="true"
         android:text="Iniciar sesion"
         android:textSize="24sp"
@@ -26,48 +27,37 @@
         android:id="@+id/TVtuspedidos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="4dp"
         android:clickable="true"
         android:text="Tus pedidos"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/TVlista"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TViniciarsesion"
+        app:layout_constraintStart_toStartOf="@+id/TViniciarsesion"
         app:layout_constraintTop_toBottomOf="@+id/TViniciarsesion" />
 
     <TextView
         android:id="@+id/TVlista"
-        android:layout_width="335dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="320dp"
-        android:layout_marginRight="320dp"
         android:clickable="true"
         android:text="Tus lista"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TVtuspedidos"
+        app:layout_constraintStart_toStartOf="@+id/TVtuspedidos"
         app:layout_constraintTop_toBottomOf="@+id/TVtuspedidos" />
 
     <TextView
         android:id="@+id/TVconfiguraciones"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:text="Configuraciones"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TVlista"
+        app:layout_constraintStart_toStartOf="@+id/TVlista"
         app:layout_constraintTop_toBottomOf="@+id/TVlista" />
 </androidx.constraintlayout.widget.ConstraintLayout>
