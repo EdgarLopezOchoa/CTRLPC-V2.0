@@ -79,4 +79,11 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RVarticulos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="179dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
