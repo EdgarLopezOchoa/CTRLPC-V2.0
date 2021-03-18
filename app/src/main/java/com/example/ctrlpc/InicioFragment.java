@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InicioFragment#newInstance} factory method to
@@ -20,6 +22,9 @@ import android.widget.TextView;
 public class InicioFragment extends Fragment {
 
   TextView Discos,Rams;
+
+    ImageView IV1,IV2,IV3,IV4,IV5,IV6;
+
   public int Articulo;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -69,6 +74,34 @@ public class InicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
+
+        IV1 = view.findViewById(R.id.IVA1);
+        IV2 = view.findViewById(R.id.IVA2);
+        IV3 = view.findViewById(R.id.IVA3);
+        IV4 = view.findViewById(R.id.IVA4);
+        IV5 = view.findViewById(R.id.IVA5);
+        IV6 = view.findViewById(R.id.IVA6);
+
+
+        Picasso.get()
+                .load("https://images-na.ssl-images-amazon.com/images/I/61UV4Psi80L._AC_SL1100_.jpg")
+                .into(IV1);
+        Picasso.get()
+                .load("https://http2.mlstatic.com/D_NQ_NP_962239-MLA32170216683_092019-O.jpg")
+                .into(IV2);
+        Picasso.get()
+                .load("https://media.ldlc.com/r1600/ld/products/00/04/94/95/LD0004949540_2.jpg")
+                .into(IV3);
+        Picasso.get()
+                .load("https://ae01.alicdn.com/kf/HTB1T5kfm7SWBuNjSszdq6zeSpXac/KingSpec-512GB-mSATA-Hard-Drive-SSD-500GB-Mini-Card-For-Laptop-3-5-mm-1-3.jpg")
+                .into(IV4);
+        Picasso.get()
+                .load("https://www.cyberpuerta.mx/img/product/L/CP-HYPERX-HX429C15PB3A8-3.jpg")
+                .into(IV5);
+        Picasso.get()
+                .load("https://ss628.liverpool.com.mx/xl/1097144946.jpg")
+                .into(IV6);
+
 
         Discos = view.findViewById(R.id.TVvermasCV);
         Rams = view.findViewById(R.id.TVvermasCV1);

@@ -39,7 +39,7 @@ public class Articulos extends AppCompatActivity {
 
     InicioFragment inicioFragment = new InicioFragment();
 
-    public int NumeroDeArticulo = inicioFragment.Articulo;
+    /*public int NumeroDeArticulo = inicioFragment.Articulo;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class Articulos extends AppCompatActivity {
         Listdatos = new ArrayList<>();
 
 
-CargarArticulos();
+        CargarArticulos();
 
 
 

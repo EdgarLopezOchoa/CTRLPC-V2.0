@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
+    android:background="#8E8E8E"
     tools:context=".InicioFragment">
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,11 +45,12 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
+
                         app:layout_constraintBottom_toTopOf="@+id/IVA3"
                         app:layout_constraintEnd_toStartOf="@+id/IVA2"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/ic_settings" />
+                        tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA2"
@@ -59,6 +60,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
+
                         app:layout_constraintBottom_toBottomOf="@+id/IVA1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/IVA1"
@@ -68,14 +70,15 @@
                     <ImageView
                         android:id="@+id/IVA3"
                         android:layout_width="0dp"
-                        android:layout_height="80dp"
+                        android:layout_height="140dp"
                         android:layout_marginTop="162dp"
                         android:layout_marginBottom="24dp"
+
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/IVA2"
                         app:layout_constraintStart_toStartOf="@+id/IVA1"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/logo" />
+                        tools:src="@tools:sample/avatars" />
 
                     <TextView
                         android:id="@+id/TVvermasCV1"
@@ -97,8 +100,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/CVarticulo2"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
-                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:elevation="6dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -132,11 +135,12 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
+                        android:src="@drawable/usuario"
                         app:layout_constraintBottom_toBottomOf="@+id/IVA5"
                         app:layout_constraintEnd_toStartOf="@+id/IVA5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/usuario" />
+                        tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA5"
@@ -148,17 +152,16 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
-
                         app:layout_constraintBottom_toTopOf="@+id/IVA6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/IVA4"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/logo" />
+                        tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA6"
                         android:layout_width="0dp"
-                        android:layout_height="0dp"
+                        android:layout_height="140dp"
                         android:layout_marginTop="162dp"
                         android:layout_marginBottom="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
