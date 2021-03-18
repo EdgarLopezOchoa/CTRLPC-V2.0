@@ -1,5 +1,6 @@
 package com.example.ctrlpc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +18,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class InicioFragment extends Fragment {
+
+  TextView Discos,Rams;
+  public int Articulo;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,7 +68,35 @@ public class InicioFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        Discos = view.findViewById(R.id.TVvermasCV);
+        Rams = view.findViewById(R.id.TVvermasCV1);
+        Articulos articulos = new Articulos();
+        Discos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent =  new Intent(getActivity(), Articulos.class);
+                getActivity().startActivity(intent);
+
+                Articulo = 2;
+
+            }
+        });
+
+        Rams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent =  new Intent(getActivity(), Articulos.class);
+                getActivity().startActivity(intent);
+                Articulo = 1;
+
+            }
+        });
+
+
+                return view;
     }
 }

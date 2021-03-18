@@ -4,26 +4,22 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHolderDatos> {
 
-    private List<Articulos> listdatos;
+    private List<ArticulosDB> listdatos;
     private Context mCtx;
 
-    public AdaptadorLista(Context mCtx, List<Articulos> listdatos) {
+    public AdaptadorLista(Context mCtx, List<ArticulosDB> listdatos) {
         this.listdatos = listdatos;
         this.mCtx = mCtx;
     }
@@ -42,7 +38,7 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatos holder, int position) {
 
-        Articulos articulos = listdatos.get(position);
+        ArticulosDB articulos = listdatos.get(position);
 
         Glide.with(mCtx)
                 .load(articulos.getFOTO())

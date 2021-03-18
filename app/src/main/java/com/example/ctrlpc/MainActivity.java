@@ -1,17 +1,9 @@
 package com.example.ctrlpc;
 
 import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -28,7 +20,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
-    List<Articulos> Listdatos;
+    List<ArticulosDB> Listdatos;
 
     private String URL_Articulos = "https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php";
 
@@ -75,14 +66,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adaptadorLista);*/
 
 
-        recyclerView = findViewById(R.id.RVarticulos);
+       /* recyclerView = findViewById(R.id.RVarticulos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Listdatos = new ArrayList<>();
 
 
-        CargarArticulos();
+        CargarArticulos();*/
 
 
 
@@ -91,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void CargarArticulos(){
+    /*private void CargarArticulos(){
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_Articulos, new Response.Listener<String>() {
             @Override
@@ -102,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject articulos = array.getJSONObject(i);
 
-                        Listdatos.add(new Articulos (
+                        Listdatos.add(new ArticulosDB(
                                 articulos.getInt("ID_PROD"),
                             articulos.getString("NOMBRE"),
                                     articulos.getString("DESCRIPCION"),
@@ -134,6 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(stringRequest);
 
-    }
+    }*/
 
 }
