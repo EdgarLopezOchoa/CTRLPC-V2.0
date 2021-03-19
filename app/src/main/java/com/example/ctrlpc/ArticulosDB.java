@@ -8,14 +8,22 @@ public class ArticulosDB {
 
 
 
+    private int PRECIO;
+
+
     private int ID_PROD;
 
-    public ArticulosDB(int ID_PROD, String NOMBRE, String DESCRIPCION, String FOTO) {
+    public ArticulosDB(int ID_PROD, int PRECIO, String NOMBRE, String DESCRIPCION, String FOTO) {
 
         this.NOMBRE = NOMBRE;
         this.DESCRIPCION = DESCRIPCION;
         this.FOTO = FOTO;
         this.ID_PROD = ID_PROD;
+        this.PRECIO = PRECIO;
+    }
+
+    public int getPRECIO() {
+        return PRECIO;
     }
 
     public int getID_PROD() {

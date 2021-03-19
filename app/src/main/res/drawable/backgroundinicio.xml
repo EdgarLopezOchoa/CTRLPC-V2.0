@@ -1,8 +1,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <gradient
-        android:startColor="@color/Naranja_Obscuro"
-        android:centerColor="@color/Naranja_Obscuro"
+        android:startColor="@color/Naranja_Obscuro_barraDeEstado"
+        android:centerColor="@color/white"
         android:endColor="@color/white"
         android:angle="90" />
 

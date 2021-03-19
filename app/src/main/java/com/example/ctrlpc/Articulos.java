@@ -33,11 +33,15 @@ public class Articulos extends AppCompatActivity {
 
     List<ArticulosDB> Listdatos;
 
-    private String URL_Articulos = "https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php";
+    String articulo = InicioFragment.Articulo;
+
+    int accion = InicioFragment.Accion;
 
     RequestQueue requestQueue;
 
     InicioFragment inicioFragment = new InicioFragment();
+
+
 
     /*public int NumeroDeArticulo = inicioFragment.Articulo;*/
 
@@ -53,16 +57,16 @@ public class Articulos extends AppCompatActivity {
         Listdatos = new ArrayList<>();
 
 
-        CargarArticulos();
+        traerarticulos(accion);
 
 
 
     }
 
 
-    private void CargarArticulos(){
+    private void CargarArticulosDeRam(String URL){
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_Articulos, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -73,9 +77,11 @@ public class Articulos extends AppCompatActivity {
 
                         Listdatos.add(new ArticulosDB(
                                 articulos.getInt("ID_PROD"),
+                                articulos.getInt("PRECIO"),
                                 articulos.getString("NOMBRE"),
                                 articulos.getString("DESCRIPCION"),
                                 articulos.getString("FOTO")
+
 
 
                         ));
@@ -107,15 +113,64 @@ public class Articulos extends AppCompatActivity {
 
     }
 
-   /* public void traerarticulos(int numeroDeArticulo){
+    private void CargarArticulosDeDiscos(String URL){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray array = new JSONArray(response);
+
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject articulos = array.getJSONObject(i);
+
+                        Listdatos.add(new ArticulosDB(
+                                articulos.getInt("ID_PROD"),
+                                articulos.getInt("PRECIO"),
+                                articulos.getString("NOMBRE"),
+                                articulos.getString("DESCRIPCION"),
+                                articulos.getString("FOTO")
+
+
+
+                        ));
+
+                    }
+
+
+                    AdaptadorLista adaptadorLista = new AdaptadorLista(Articulos.this, Listdatos);
+                    recyclerView.setAdapter(adaptadorLista);
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+
+                new Response.ErrorListener(){
+
+
+                    public void onErrorResponse(VolleyError error){
+                        Toast.makeText(getApplicationContext(), error.toString(),Toast.LENGTH_SHORT).show();
+
+                    }
+
+                });
+
+        Volley.newRequestQueue(this).add(stringRequest);
+
+    }
+
+    public void traerarticulos(int numeroDeArticulo){
         switch (numeroDeArticulo){
 
             case 1:
-                traerram(URL_Articulos);
+                CargarArticulosDeRam("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+articulo);
                 break;
 
             case 2:
-                traerdiscos(URL_Articulos);
+                CargarArticulosDeDiscos("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+articulo);
                 break;
 
         }
@@ -123,60 +178,5 @@ public class Articulos extends AppCompatActivity {
 
     }
 
-    public void traerram(String URL){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                CargarArticulos();
-            }
-        },
-                new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String > getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("BUSQUEDA", "RAM");
-                return parametros;
 
-            }
-        };
-
-        requestQueue=Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
-
-
-
-
-
-
-
-    public void traerdiscos(String URL){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                CargarArticulos();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String, String > getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("BUSQUEDA", "HDD");
-                return parametros;
-
-            }
-        };
-
-        requestQueue=Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }*/
 }

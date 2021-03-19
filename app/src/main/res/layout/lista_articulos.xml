@@ -2,23 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#8E8E8E">
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/CVarticulo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginBottom="10dp"
         android:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/IVA1"
@@ -40,7 +44,7 @@
                 android:id="@+id/TVdescripcionA1"
                 android:layout_width="0dp"
                 android:layout_height="103dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/TVtituloA1"
                 app:layout_constraintStart_toStartOf="@+id/TVtituloA1"
                 app:layout_constraintTop_toBottomOf="@+id/TVtituloA1" />
@@ -48,22 +52,22 @@
             <Button
                 android:id="@+id/BTNcomprarA1"
                 android:layout_width="115dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
                 android:text="Comprar"
                 android:textSize="12sp"
                 app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
                 app:layout_constraintStart_toEndOf="@+id/BTNlistaA1"
                 app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA1" />
 
             <Button
                 android:id="@+id/BTNlistaA1"
-                android:layout_width="117dp"
+                android:layout_width="115dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
@@ -72,14 +76,17 @@
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/BTNcomprarA1"
-                app:layout_constraintStart_toEndOf="@+id/BTNfavortioA1" />
+                app:layout_constraintStart_toEndOf="@+id/BTNfavortioA1"
+                app:layout_constraintTop_toTopOf="@+id/BTNcomprarA1"
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
                 android:id="@+id/BTNfavortioA1"
-                android:layout_width="114dp"
+                android:layout_width="115dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginLeft="30dp"
+                android:layout_marginBottom="20dp"
                 android:text="FAVORITOS"
                 android:textSize="12sp"
                 app:cornerRadius="20dp"
@@ -89,14 +96,32 @@
 
             <TextView
                 android:id="@+id/TVtituloA1"
-                android:layout_width="210dp"
-                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="140dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:textAlignment="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/IVA1" />
+
+            <TextView
+                android:id="@+id/TVPA1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toTopOf="@+id/BTNcomprarA1"
+                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/TVdescripcionA1"
+                app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA1"
+                app:layout_constraintVertical_bias="0.523" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -25,7 +25,8 @@ public class InicioFragment extends Fragment {
 
     ImageView IV1,IV2,IV3,IV4,IV5,IV6;
 
-  public int Articulo;
+  public static String Articulo = "";
+  public static int Accion = 0;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -113,7 +114,8 @@ public class InicioFragment extends Fragment {
                 Intent intent =  new Intent(getActivity(), Articulos.class);
                 getActivity().startActivity(intent);
 
-                Articulo = 2;
+                Articulo = "HDD";
+                Accion = 2;
 
             }
         });
@@ -124,8 +126,8 @@ public class InicioFragment extends Fragment {
 
                 Intent intent =  new Intent(getActivity(), Articulos.class);
                 getActivity().startActivity(intent);
-                Articulo = 1;
-
+                Articulo = "RAM";
+                Accion = 1;
             }
         });
 

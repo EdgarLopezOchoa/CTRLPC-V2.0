@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="@color/Naranja_Obscuro"
+        android:endColor="@color/Naranja_Obscuro_barraDeEstado"
+        android:angle="360" /> </shape>

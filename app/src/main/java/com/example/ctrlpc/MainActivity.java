@@ -1,7 +1,10 @@
 package com.example.ctrlpc;
 
 import android.app.Dialog;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -12,6 +15,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -53,27 +57,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-       /*recyclerView = findViewById(R.id.RVarticulos);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
-        listdatos = new ArrayList<String>();
-
-        for (int i=0; i<=50;i++){
-
-            listdatos.add("Titulo #" + i + "");
-        }
-        AdaptadorLista adaptadorLista = new AdaptadorLista(listdatos);
-        recyclerView.setAdapter(adaptadorLista);*/
 
 
-       /* recyclerView = findViewById(R.id.RVarticulos);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Listdatos = new ArrayList<>();
-
-
-        CargarArticulos();*/
 
 
 
@@ -82,49 +68,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*private void CargarArticulos(){
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_Articulos, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONArray array = new JSONArray(response);
-
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject articulos = array.getJSONObject(i);
-
-                        Listdatos.add(new ArticulosDB(
-                                articulos.getInt("ID_PROD"),
-                            articulos.getString("NOMBRE"),
-                                    articulos.getString("DESCRIPCION"),
-                                    articulos.getString("FOTO")
-
-                        ));
-                    }
-
-
-                    AdaptadorLista adaptadorLista = new AdaptadorLista(MainActivity.this, Listdatos);
-                    recyclerView.setAdapter(adaptadorLista);
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        },
-
-        new Response.ErrorListener(){
-
-
-            public void onErrorResponse(VolleyError error){
-                Toast.makeText(getApplicationContext(), error.toString(),Toast.LENGTH_SHORT).show();
-
-            }
-
-                });
-
-        Volley.newRequestQueue(this).add(stringRequest);
-
-    }*/
 
 }

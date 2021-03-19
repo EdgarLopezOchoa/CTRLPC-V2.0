@@ -45,6 +45,7 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
                 .into(holder.articulo);
         holder.titulo.setText(articulos.getNOMBRE());
         holder.descripcion.setText(articulos.getDESCRIPCION());
+        holder.precio.setText("$" + articulos.getPRECIO());
 
     }
 
@@ -55,7 +56,7 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
-        TextView titulo,descripcion;
+        TextView titulo,descripcion,precio;
         ImageView articulo;
 
 
@@ -63,6 +64,7 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
             super(itemView);
             titulo = itemView.findViewById(R.id.TVtituloA1);
             descripcion = itemView.findViewById(R.id.TVdescripcionA1);
+            precio = itemView.findViewById(R.id.TVPA1);
             articulo = itemView.findViewById(R.id.IVA1);
 
         }

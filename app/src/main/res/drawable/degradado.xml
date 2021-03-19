@@ -3,4 +3,4 @@
     <gradient
         android:startColor="@color/Naranja_Obscuro"
         android:endColor="@color/Naranja_Obscuro_barraDeEstado"
-        android:angle="360" /> </shape>
+        android:angle="270" /> </shape>

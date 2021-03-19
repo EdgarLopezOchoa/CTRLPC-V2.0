@@ -1,7 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Widget.Theme.CTRLPC.ButtonBar.Fullscreen" parent="">
         <item name="android:background">@color/black_overlay</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">false</item>
         <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="colorPrimary">#FFD700</item>
     </style>
