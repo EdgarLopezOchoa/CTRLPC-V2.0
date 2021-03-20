@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_Cuenta"
-        android:name="com.example.ctrlpc.ui.notifications.NotificationsFragment"
+        android:name="com.example.ctrlpc.CuentaFragment"
         android:label="Cuenta"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_cuenta" />
 
     <fragment
         android:id="@+id/navigation_LoginActivity"

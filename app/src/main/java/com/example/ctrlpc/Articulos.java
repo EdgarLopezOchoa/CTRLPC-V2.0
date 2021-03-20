@@ -39,7 +39,6 @@ public class Articulos extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
-    InicioFragment inicioFragment = new InicioFragment();
 
 
 
