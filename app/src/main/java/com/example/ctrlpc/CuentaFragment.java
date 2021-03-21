@@ -1,6 +1,7 @@
 package com.example.ctrlpc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -36,19 +40,24 @@ public class CuentaFragment extends Fragment {
 
     RecyclerView recyclerView;
 
-    FrameLayout frameLayout;
 
-    List<CuentaBD> Listusuarios;
+   List<CuentaBD> Listusuarios;
 
-    private Context global = null;
+  Context global = null;
 
     RequestQueue requestQueue;
 
-    int id = 24;
+    String Correo = Login.Correo;
 
-    private String URL_BD ="https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_cliente.php?ID_CLIENT=24";
+    String Password = Login.Password;
 
+    private String URL_BD ="https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_datos.php?EMAIL=" + Correo + "&PASSWORD=" + Password;
 
+    ScrollView scrollView;
+
+    Button iniciar,crear;
+
+    int sesion = Login.sesion;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -95,7 +104,7 @@ public class CuentaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_cuenta, container, false);
-        global = this.getActivity();
+       global = this.getActivity();
         recyclerView = view.findViewById(R.id.RVcuenta);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -103,26 +112,54 @@ public class CuentaFragment extends Fragment {
         Listusuarios = new ArrayList<>();
 
 
+        scrollView = view.findViewById(R.id.SVcuenta);
+        iniciar = view.findViewById(R.id.button);
+        crear = view.findViewById(R.id.button2);
 
+        if (sesion ==1) {
+            scrollView.setVisibility(View.GONE);
+            iniciar.setVisibility(View.GONE);
+            crear.setVisibility(View.GONE);
+        }
 
         CargarCuenta(URL_BD);
+
+
+        iniciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(getActivity(), Login.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        crear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(getActivity(), RegistroUsuarios.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return view;
 
     }
 
-    private void CargarCuenta(String URL){
+    public  void CargarCuenta(String URL){
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+
+
                     JSONArray array = new JSONArray(response);
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject cuenta = array.getJSONObject(i);
 
                         Listusuarios.add(new CuentaBD(
+                                cuenta.getInt("ID_CLIENT"),
                                 cuenta.getString("EMAIL"),
                                 cuenta.getString("NOMBRES"),
                                 cuenta.getString("APELLIDOS")
@@ -146,7 +183,7 @@ public class CuentaFragment extends Fragment {
 
 
                     public void onErrorResponse(VolleyError error){
-                        Toast.makeText(getContext(), error.toString(),Toast.LENGTH_SHORT).show();
+
 
                     }
 

@@ -45,6 +45,9 @@ public class AdaptadorCuenta extends RecyclerView.Adapter<AdaptadorCuenta.ViewHo
         holder.nombres.setText("NOMBRE: " + cuenta.getNOMBRES() + " " + cuenta.getAPELLIDOS());
         holder.email.setText(cuenta.getEMAIL());
 
+
+
+
     }
 
     @Override

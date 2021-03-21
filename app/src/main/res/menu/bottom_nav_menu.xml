@@ -17,9 +17,5 @@
         android:id="@+id/navigation_Cuenta"
         android:icon="@drawable/usuario"
         android:title="Cuenta" />
-    <item
-        android:id="@+id/navigation_configuracion"
-        android:icon="@drawable/ic_settings"
-        android:title="Configuracion" />
 
 </menu>

@@ -26,7 +26,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static androidx.navigation.Navigation.findNavController;
@@ -46,6 +51,14 @@ public class Login extends AppCompatActivity {
     private int DURATION_SPLACH = 3000;
     RequestQueue requestQueue;
 
+    List<CuentaBD> Listusuarios;
+
+    public static String Correo;
+
+    public  static String Password;
+
+    public static int sesion = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +75,9 @@ public class Login extends AppCompatActivity {
     asterisco2 = findViewById(R.id.TVasterisco2);
     MostrarC = findViewById(R.id.CBmostrarContraseñalogin);
         dialog = new Dialog(this);
+
+
+
 
         MostrarC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,7 +237,11 @@ botoninicio.setOnClickListener(new View.OnClickListener() {
             public void onResponse(String response) {
 
                 if(!response.isEmpty()){
+                    
+                    Correo = email.getText().toString();
+                    Password = password.getText().toString();
 
+                    sesion = 1;
                   OpenDialoglogin();
                     Limpiarformulario();
                 }

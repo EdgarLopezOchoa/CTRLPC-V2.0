@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ public class InicioFragment extends Fragment {
 
   TextView Discos,Rams;
 
-    ImageView IV1,IV2,IV3,IV4,IV5,IV6;
+    ImageView IV1,IV2,IV3,IV4,IV5,IV6,IV7,IV8,IV9,IV10,IV11,IV12;
 
   public static String Articulo = "";
   public static int Accion = 0;
@@ -82,8 +83,71 @@ public class InicioFragment extends Fragment {
         IV4 = view.findViewById(R.id.IVA4);
         IV5 = view.findViewById(R.id.IVA5);
         IV6 = view.findViewById(R.id.IVA6);
+        IV7 = view.findViewById(R.id.IVA7);
+        IV8 = view.findViewById(R.id.IVA8);
+        IV9 = view.findViewById(R.id.IVA9);
+        IV10 = view.findViewById(R.id.IVA10);
+        IV11 = view.findViewById(R.id.IVA11);
+        IV12 = view.findViewById(R.id.IVA12);
 
 
+
+
+
+
+        Discos = view.findViewById(R.id.TVvermasCV);
+        Rams = view.findViewById(R.id.TVvermasCV1);
+        Articulos articulos = new Articulos();
+        Discos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                /*Intent intent =  new Intent(getActivity(), ArticulosFragment.class);
+                getActivity().startActivity(intent);*/
+
+                Articulo = "HDD";
+                Accion = 2;
+
+
+                ArticulosFragment articulosFragment = new ArticulosFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.frameLayout,articulosFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+            }
+        });
+
+        Rams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Articulo = "RAM";
+                Accion = 1;
+
+               /* Intent intent =  new Intent(getActivity(), ArticulosFragment.class);
+                getActivity().startActivity(intent);*/
+
+                ArticulosFragment articulosFragment = new ArticulosFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.frameLayout,articulosFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+
+
+            }
+        });
+
+
+                return view;
+    }
+
+    public void ponerimagen()
+    {
         Picasso.get()
                 .load("https://images-na.ssl-images-amazon.com/images/I/61UV4Psi80L._AC_SL1100_.jpg")
                 .into(IV1);
@@ -102,36 +166,5 @@ public class InicioFragment extends Fragment {
         Picasso.get()
                 .load("https://ss628.liverpool.com.mx/xl/1097144946.jpg")
                 .into(IV6);
-
-
-        Discos = view.findViewById(R.id.TVvermasCV);
-        Rams = view.findViewById(R.id.TVvermasCV1);
-        Articulos articulos = new Articulos();
-        Discos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent =  new Intent(getActivity(), Articulos.class);
-                getActivity().startActivity(intent);
-
-                Articulo = "HDD";
-                Accion = 2;
-
-            }
-        });
-
-        Rams.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent =  new Intent(getActivity(), Articulos.class);
-                getActivity().startActivity(intent);
-                Articulo = "RAM";
-                Accion = 1;
-            }
-        });
-
-
-                return view;
     }
 }

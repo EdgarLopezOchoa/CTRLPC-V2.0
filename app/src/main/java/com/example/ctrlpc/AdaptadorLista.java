@@ -11,24 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHolderDatos> {
 
     private List<ArticulosDB> listdatos;
-    private Context mCtx;
 
-    public AdaptadorLista(Context mCtx, List<ArticulosDB> listdatos) {
+
+    public AdaptadorLista( List<ArticulosDB> listdatos) {
         this.listdatos = listdatos;
-        this.mCtx = mCtx;
+
     }
 
     @NonNull
     @Override
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.lista_articulos,null);
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_articulos,null,false);
         return new ViewHolderDatos(view);
 
 
@@ -40,7 +41,7 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
 
         ArticulosDB articulos = listdatos.get(position);
 
-        Glide.with(mCtx)
+        Picasso.get()
                 .load(articulos.getFOTO())
                 .into(holder.articulo);
         holder.titulo.setText(articulos.getNOMBRE());
