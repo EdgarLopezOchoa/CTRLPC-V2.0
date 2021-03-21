@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,7 +32,6 @@ import java.util.List;
  */
 public class ArticulosFragment extends Fragment {
 
-
     ArrayList<String> listdatos;
 
     RecyclerView recyclerView;
@@ -46,8 +43,6 @@ public class ArticulosFragment extends Fragment {
     int accion = InicioFragment.Accion;
 
     RequestQueue requestQueue;
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,20 +88,18 @@ public class ArticulosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_articulos, container, false);
+        View view =  inflater.inflate(R.layout.fragment_articulos, container, false);
 
         recyclerView = view.findViewById(R.id.RVarticulosBD);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
 
         Listdatos = new ArrayList<>();
 
 
         traerarticulos(accion);
 
-return  view;
+return view;
 
     }
 
@@ -116,10 +109,6 @@ return  view;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-
-
-
                 try {
                     JSONArray array = new JSONArray(response);
 
@@ -170,9 +159,6 @@ return  view;
             @Override
             public void onResponse(String response) {
                 try {
-
-
-
                     JSONArray array = new JSONArray(response);
 
                     for (int i = 0; i < array.length(); i++) {
@@ -192,7 +178,7 @@ return  view;
                     }
 
 
-                    AdaptadorLista adaptadorLista = new AdaptadorLista( Listdatos);
+                    AdaptadorLista adaptadorLista = new AdaptadorLista(Listdatos);
                     recyclerView.setAdapter(adaptadorLista);
 
 

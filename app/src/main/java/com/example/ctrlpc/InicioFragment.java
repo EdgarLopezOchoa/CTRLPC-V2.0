@@ -91,6 +91,8 @@ public class InicioFragment extends Fragment {
         IV12 = view.findViewById(R.id.IVA12);
 
 
+        ponerimagen();
+
 
 
 
