@@ -44,12 +44,12 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
 
+                        android:layout_marginBottom="10dp"
                         app:layout_constraintBottom_toTopOf="@+id/IVA3"
                         app:layout_constraintEnd_toStartOf="@+id/IVA2"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TVramsA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
@@ -71,7 +71,7 @@
                         android:id="@+id/IVA3"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
-                        android:layout_marginTop="162dp"
+                        android:layout_marginTop="177dp"
                         android:layout_marginBottom="24dp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,12 +86,25 @@
                         android:layout_height="0dp"
                         android:clickable="true"
                         android:text="VER MAS"
+                        android:textColor="@color/Gristes_Letras"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/IVA1"
                         app:layout_constraintTop_toBottomOf="@+id/IVA3"
                         app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/TVramsA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="MEMORIAS RAM"
+                        android:textColor="@color/Gristes_Letras"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/IVA1"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -118,6 +131,7 @@
                         android:layout_height="0dp"
                         android:clickable="true"
                         android:text="VER MAS"
+                        android:textColor="@color/Gristes_Letras"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -136,7 +150,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/IVA5"
                         app:layout_constraintEnd_toStartOf="@+id/IVA5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TVdiscosA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
@@ -152,20 +166,32 @@
                         app:layout_constraintBottom_toTopOf="@+id/IVA6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/IVA4"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TVdiscosA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA6"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
-                        android:layout_marginTop="162dp"
+                        android:layout_marginTop="177dp"
                         android:layout_marginBottom="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/IVA5"
                         app:layout_constraintStart_toStartOf="@+id/IVA4"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/TVdiscosA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="HDD Y SSD"
+                        android:textColor="@color/Gristes_Letras"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/IVA4"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -196,6 +222,7 @@
                         android:layout_height="0dp"
                         android:clickable="true"
                         android:text="VER MAS"
+                        android:textColor="@color/Gristes_Letras"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -214,8 +241,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/IVA8"
                         app:layout_constraintEnd_toStartOf="@+id/IVA8"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@+id/TVtarjetasmadresA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
@@ -231,20 +257,33 @@
                         app:layout_constraintBottom_toTopOf="@+id/IVA9"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/IVA7"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TVtarjetasmadresA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA9"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
-                        android:layout_marginTop="162dp"
+                        android:layout_marginTop="177dp"
                         android:layout_marginBottom="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/IVA8"
                         app:layout_constraintStart_toStartOf="@+id/IVA7"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:src="@tools:sample/avatars" />
+
+
+                    <TextView
+                        android:id="@+id/TVtarjetasmadresA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="TARJETAS MADRES"
+                        android:textColor="@color/Gristes_Letras"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/IVA7"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -275,6 +314,7 @@
                         android:layout_height="0dp"
                         android:clickable="true"
                         android:text="VER MAS"
+                        android:textColor="@color/Gristes_Letras"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -293,8 +333,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/IVA11"
                         app:layout_constraintEnd_toStartOf="@+id/IVA11"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@+id/TVaccesoriosA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
@@ -310,20 +349,31 @@
                         app:layout_constraintBottom_toTopOf="@+id/IVA12"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/IVA10"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/TVaccesoriosA1"
                         tools:src="@tools:sample/avatars" />
 
                     <ImageView
                         android:id="@+id/IVA12"
                         android:layout_width="0dp"
                         android:layout_height="140dp"
-                        android:layout_marginTop="162dp"
+                        android:layout_marginTop="177dp"
                         android:layout_marginBottom="24dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/IVA11"
                         app:layout_constraintStart_toStartOf="@+id/IVA10"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:src="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/TVaccesoriosA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="MAS ACCESORIOS"
+                        android:textColor="@color/Gristes_Letras"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="@+id/IVA10"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

@@ -1,6 +1,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <gradient
-        android:startColor="@color/Naranja_Obscuro"
-        android:endColor="@color/Naranja_Obscuro_barraDeEstado"
+        android:startColor="@color/Morado_Obscuro"
+        android:endColor="@color/Morado"
         android:angle="270" /> </shape>

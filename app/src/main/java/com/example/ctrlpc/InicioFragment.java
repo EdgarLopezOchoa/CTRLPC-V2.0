@@ -22,7 +22,7 @@ import com.squareup.picasso.Picasso;
  */
 public class InicioFragment extends Fragment {
 
-  TextView Discos,Rams;
+  TextView Discos,Rams,tarjetamadre,accesorios,tarjetagrafica;
 
     ImageView IV1,IV2,IV3,IV4,IV5,IV6,IV7,IV8,IV9,IV10,IV11,IV12;
 
@@ -91,12 +91,17 @@ public class InicioFragment extends Fragment {
         IV12 = view.findViewById(R.id.IVA12);
 
 
+        ponerimagen();
+
 
 
 
 
         Discos = view.findViewById(R.id.TVvermasCV);
         Rams = view.findViewById(R.id.TVvermasCV1);
+        tarjetamadre = view.findViewById(R.id.TVvermasCV2);
+        accesorios = view.findViewById(R.id.TVvermasCV3);
+
         Articulos articulos = new Articulos();
         Discos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,6 +147,38 @@ public class InicioFragment extends Fragment {
             }
         });
 
+        tarjetamadre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Articulo = "TARJETA MADRE";
+                Accion = 3;
+
+                ArticulosFragment articulosFragment = new ArticulosFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.frameLayout,articulosFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        accesorios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Articulo = "ACCESORIO";
+                Accion = 4;
+
+                ArticulosFragment articulosFragment = new ArticulosFragment();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+                transaction.replace(R.id.frameLayout,articulosFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
                 return view;
     }
@@ -161,10 +198,28 @@ public class InicioFragment extends Fragment {
                 .load("https://ae01.alicdn.com/kf/HTB1T5kfm7SWBuNjSszdq6zeSpXac/KingSpec-512GB-mSATA-Hard-Drive-SSD-500GB-Mini-Card-For-Laptop-3-5-mm-1-3.jpg")
                 .into(IV4);
         Picasso.get()
-                .load("https://www.cyberpuerta.mx/img/product/L/CP-HYPERX-HX429C15PB3A8-3.jpg")
+                .load("https://dojiw2m9tvv09.cloudfront.net/14577/product/L_10081-27422.jpg?252")
                 .into(IV5);
         Picasso.get()
-                .load("https://ss628.liverpool.com.mx/xl/1097144946.jpg")
+                .load("https://http2.mlstatic.com/D_NQ_NP_776792-MLA40491725737_012020-O.jpg")
                 .into(IV6);
+        Picasso.get()
+                .load("https://www.cyberpuerta.mx/img/product/L/CP-AORUS-B450AORUSPROWIFI-1.jpg")
+                .into(IV7);
+        Picasso.get()
+                .load("https://www.cyberpuerta.mx/img/product/L/CP-GIGABYTE-H410MH(REV10)-1.jpg")
+                .into(IV8);
+        Picasso.get()
+                .load("https://intercompras.com/images/product/GIGABYTE_B450GAMINGX.jpg")
+                .into(IV9);
+        Picasso.get()
+                .load("https://www.sanborns.com.mx/imagenes-sanborns-ii/1200/631145836782.jpg")
+                .into(IV10);
+        Picasso.get()
+                .load("https://cdn.shopify.com/s/files/1/0254/2144/7246/products/5dfc93f7-beff-4646-ad51-f9ad6aafeb07.jpg?v=1612377194")
+                .into(IV11);
+        Picasso.get()
+                .load("https://resources.claroshop.com/medios-plazavip/s2/10252/1268355/5dcdcf0239527-audifonos-gamer-nivava-k6-luz-led-sonido-envolvente-verde-1600x1600.jpg")
+                .into(IV12);
     }
 }

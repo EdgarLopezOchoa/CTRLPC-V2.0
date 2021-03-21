@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,7 +32,6 @@ import java.util.List;
  */
 public class ArticulosFragment extends Fragment {
 
-
     ArrayList<String> listdatos;
 
     RecyclerView recyclerView;
@@ -46,8 +43,6 @@ public class ArticulosFragment extends Fragment {
     int accion = InicioFragment.Accion;
 
     RequestQueue requestQueue;
-
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,33 +88,27 @@ public class ArticulosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_articulos, container, false);
+        View view =  inflater.inflate(R.layout.fragment_articulos, container, false);
 
         recyclerView = view.findViewById(R.id.RVarticulosBD);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
-
         Listdatos = new ArrayList<>();
 
 
-        traerarticulos(accion);
+        CargarArticulos("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+ articulo);
 
-return  view;
+return view;
 
     }
 
 
-    private void CargarArticulosDeRam(String URL){
+    private void CargarArticulos(String URL){
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
-
-
-
                 try {
                     JSONArray array = new JSONArray(response);
 
@@ -161,74 +150,6 @@ return  view;
                 });
 
         Volley.newRequestQueue(getContext()).add(stringRequest);
-
-    }
-
-    private void CargarArticulosDeDiscos(String URL){
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-
-
-
-                    JSONArray array = new JSONArray(response);
-
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject articulos = array.getJSONObject(i);
-
-                        Listdatos.add(new ArticulosDB(
-                                articulos.getInt("ID_PROD"),
-                                articulos.getInt("PRECIO"),
-                                articulos.getString("NOMBRE"),
-                                articulos.getString("DESCRIPCION"),
-                                articulos.getString("FOTO")
-
-
-
-                        ));
-
-                    }
-
-
-                    AdaptadorLista adaptadorLista = new AdaptadorLista( Listdatos);
-                    recyclerView.setAdapter(adaptadorLista);
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        },
-
-                new Response.ErrorListener(){
-
-
-                    public void onErrorResponse(VolleyError error){
-                        Toast.makeText(getContext(), error.toString(),Toast.LENGTH_SHORT).show();
-
-                    }
-
-                });
-
-        Volley.newRequestQueue(getContext()).add(stringRequest);
-
-    }
-
-    public void traerarticulos(int numeroDeArticulo){
-        switch (numeroDeArticulo){
-
-            case 1:
-                CargarArticulosDeRam("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+articulo);
-                break;
-
-            case 2:
-                CargarArticulosDeDiscos("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+articulo);
-                break;
-
-        }
-
 
     }
 
