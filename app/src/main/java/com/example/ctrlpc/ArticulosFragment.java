@@ -44,6 +44,7 @@ public class ArticulosFragment extends Fragment {
 
     RequestQueue requestQueue;
 
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -95,6 +96,8 @@ public class ArticulosFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         Listdatos = new ArrayList<>();
+
+
 
 
         CargarArticulos("https://carlosarmenta.000webhostapp.com/ctrlpc/buscar_articulos.php?TIPO="+ articulo);

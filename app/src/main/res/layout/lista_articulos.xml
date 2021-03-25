@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="20dp"
@@ -64,7 +65,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
                 app:layout_constraintStart_toEndOf="@+id/BTNlistaA1"
-                app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA1" />
+                app:layout_constraintTop_toBottomOf="@+id/TVPA1" />
 
             <Button
                 android:id="@+id/BTNlistaA1"
@@ -114,15 +115,11 @@
             <TextView
                 android:id="@+id/TVPA1"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
                 android:textStyle="italic"
-                app:layout_constraintBottom_toTopOf="@+id/BTNcomprarA1"
-                app:layout_constraintEnd_toEndOf="@+id/TVemailA1"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/TVemailA1"
-                app:layout_constraintTop_toBottomOf="@+id/TVemailA1"
-                app:layout_constraintVertical_bias="0.523" />
+                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
+                app:layout_constraintStart_toStartOf="@+id/TVdescripcionA1"
+                app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
