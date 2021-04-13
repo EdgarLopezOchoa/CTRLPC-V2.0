@@ -105,21 +105,25 @@ public class CarritoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_carrito, container, false);
-
-        Registrararticulo("https://carlosarmenta.000webhostapp.com/ctrlpc/registro_articulos.php");
-
-
-        Listcarrito = new ArrayList<>();
-
-        recyclerView = view.findViewById(R.id.RVcarritoCompras);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+try {
+    Registrararticulo("https://carlosarmenta.000webhostapp.com/ctrlpc/registro_articulos.php");
 
 
+    Listcarrito = new ArrayList<>();
+
+    recyclerView = view.findViewById(R.id.RVcarritoCompras);
+    recyclerView.setHasFixedSize(true);
+    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
 
-        CargarArticuloscarrito("https://carlosarmenta.000webhostapp.com/ctrlpc/carrito.php?EMAIL=" + email);
+
+
+    CargarArticuloscarrito("https://carlosarmenta.000webhostapp.com/ctrlpc/carrito.php?EMAIL=" + email);
+} catch (Exception e) {
+
+}
+
 
         return view;
     }
