@@ -3,6 +3,7 @@ package com.example.ctrlpc;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,9 +18,13 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
 
     private List<ArticulosDB> listdatos;
 
+    public static String titulo,descripcion, precio,imagen,id;
+    public static int permiso = 0;
+
 
     public AdaptadorLista( List<ArticulosDB> listdatos) {
         this.listdatos = listdatos;
+
 
     }
 
@@ -46,6 +51,21 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
         holder.descripcion.setText(articulos.getDESCRIPCION());
         holder.precio.setText("$" + articulos.getPRECIO());
 
+
+
+        holder.comprar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                permiso = 1;
+
+                titulo = holder.titulo.getText().toString();
+                descripcion = holder.descripcion.getText().toString();
+                precio = holder.precio.getText().toString();
+                imagen = articulos.getFOTO();
+                id = "" + articulos.getID_PROD();
+            }
+        });
+
     }
 
     @Override
@@ -57,10 +77,13 @@ public class AdaptadorLista extends RecyclerView.Adapter<AdaptadorLista.ViewHold
 
         TextView titulo,descripcion,precio;
         ImageView articulo;
+        Button comprar;
 
 
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
+
+            comprar = itemView.findViewById(R.id.BTNcomprarA1);
             titulo = itemView.findViewById(R.id.TVtituloA1);
             descripcion = itemView.findViewById(R.id.TVdescripcionA1);
             precio = itemView.findViewById(R.id.TVPA1);

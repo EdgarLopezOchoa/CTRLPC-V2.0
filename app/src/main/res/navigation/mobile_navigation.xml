@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_Carrito"
-        android:name="com.example.ctrlpc.ui.dashboard.DashboardFragment"
+        android:name="com.example.ctrlpc.CarritoFragment"
         android:label="Carrito"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_carrito" />
 
     <fragment
         android:id="@+id/navigation_Cuenta"

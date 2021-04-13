@@ -8,7 +8,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CVarticulo1"
+        android:id="@+id/CVarticulo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/IVA1"
+                android:id="@+id/IVA2"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="10dp"
@@ -33,42 +33,42 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="100dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/TVtituloA1"
+                app:layout_constraintEnd_toStartOf="@+id/TVtituloA2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/TVdescripcionA1"
+                android:id="@+id/TVdescripcionA2"
                 android:layout_width="0dp"
                 android:layout_height="103dp"
                 android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="@+id/TVtituloA1"
-                app:layout_constraintStart_toStartOf="@+id/TVtituloA1"
-                app:layout_constraintTop_toBottomOf="@+id/TVtituloA1" />
+                app:layout_constraintEnd_toEndOf="@+id/TVtituloA2"
+                app:layout_constraintStart_toStartOf="@+id/TVtituloA2"
+                app:layout_constraintTop_toBottomOf="@+id/TVtituloA2" />
 
             <Button
-                android:id="@+id/BTNcomprarA1"
-                android:layout_width="296dp"
+                android:id="@+id/BTNeliminarA2"
+                android:layout_width="262dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginLeft="80dp"
+                android:layout_marginStart="105dp"
+                android:layout_marginLeft="105dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
-                android:layout_marginRight="80dp"
+                android:layout_marginEnd="105dp"
+                android:layout_marginRight="105dp"
                 android:layout_marginBottom="20dp"
-                android:text="Comprar"
+                android:text="Eliminar"
                 android:textSize="12sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
-                app:layout_constraintStart_toStartOf="@+id/IVA1"
-                app:layout_constraintTop_toBottomOf="@+id/TVPA1" />
+                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA2"
+                app:layout_constraintStart_toStartOf="@+id/IVA2"
+                app:layout_constraintTop_toBottomOf="@+id/TVPA2" />
 
             <TextView
-                android:id="@+id/TVtituloA1"
+                android:id="@+id/TVtituloA2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="140dp"
@@ -81,16 +81,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/IVA1" />
+                app:layout_constraintTop_toTopOf="@+id/IVA2" />
 
             <TextView
-                android:id="@+id/TVPA1"
+                android:id="@+id/TVPA2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA1"
-                app:layout_constraintStart_toStartOf="@+id/TVdescripcionA1"
-                app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA1" />
+                app:layout_constraintEnd_toEndOf="@+id/TVdescripcionA2"
+                app:layout_constraintStart_toStartOf="@+id/TVdescripcionA2"
+                app:layout_constraintTop_toBottomOf="@+id/TVdescripcionA2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

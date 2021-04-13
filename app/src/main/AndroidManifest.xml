@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CTRLPC">
-        <activity android:name=".Articulos"></activity>
+        <activity android:name=".PruebaArticulos"></activity>
+        <activity android:name=".Articulos" />
         <activity android:name=".RegistroUsuarios" />
         <activity android:name=".Login" />
         <activity android:name=".MainActivity" />
