@@ -21,7 +21,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/IVA1"
+                android:id="@+id/IVUS"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="10dp"
@@ -61,7 +61,7 @@
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/TVnombresA1"
-                app:layout_constraintStart_toStartOf="@+id/IVA1" />
+                app:layout_constraintStart_toStartOf="@+id/IVUS" />
 
             <TextView
                 android:id="@+id/TVnombresA1"
@@ -73,11 +73,35 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.842"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/IVA1" />
+                app:layout_constraintTop_toTopOf="@+id/IVUS" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:text="NOMBRE:"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/TVnombresA1"
+                app:layout_constraintEnd_toEndOf="@+id/TVnombresA1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/IVUS" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="E-MAIL:"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/TVemailA1"
+                app:layout_constraintEnd_toEndOf="@+id/TVemailA1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/TVemailA1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

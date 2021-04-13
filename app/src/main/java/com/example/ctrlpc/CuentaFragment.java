@@ -162,7 +162,8 @@ public class CuentaFragment extends Fragment {
                                 cuenta.getInt("ID_CLIENT"),
                                 cuenta.getString("EMAIL"),
                                 cuenta.getString("NOMBRES"),
-                                cuenta.getString("APELLIDOS")
+                                cuenta.getString("APELLIDOS"),
+                                cuenta.getString("FOTO")
 
                         ));
 

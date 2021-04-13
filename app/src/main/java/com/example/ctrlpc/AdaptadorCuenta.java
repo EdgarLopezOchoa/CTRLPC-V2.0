@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class AdaptadorCuenta extends RecyclerView.Adapter<AdaptadorCuenta.ViewHolderDatos> {
@@ -41,8 +43,10 @@ public class AdaptadorCuenta extends RecyclerView.Adapter<AdaptadorCuenta.ViewHo
 
         CuentaBD cuenta = listusuarios.get(position);
 
-
-        holder.nombres.setText("NOMBRE: " + cuenta.getNOMBRES() + " " + cuenta.getAPELLIDOS());
+        Picasso.get()
+                .load(cuenta.getFOTO())
+                .into(holder.usuario);
+        holder.nombres.setText(cuenta.getNOMBRES() + " " + cuenta.getAPELLIDOS());
         holder.email.setText(cuenta.getEMAIL());
 
 
@@ -63,6 +67,8 @@ public class AdaptadorCuenta extends RecyclerView.Adapter<AdaptadorCuenta.ViewHo
 
         public ViewHolderDatos(@NonNull View itemView) {
             super(itemView);
+
+            usuario = itemView.findViewById(R.id.IVUS);
 
             email = itemView.findViewById(R.id.TVemailA1);
             nombres = itemView.findViewById(R.id.TVnombresA1);
